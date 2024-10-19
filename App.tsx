@@ -1,5 +1,6 @@
+// App.tsx
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import QRCode from "react-native-qrcode-svg";
 import Header from "./components/Header";
 import Card from "./components/Card";
@@ -11,7 +12,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header displayMyQr={() => setDisplayMyQR(true)} />
+      <Header
+        displayMyInfo={() => setDisplayMyQR(true)}
+        displayMyRepo={() => setDisplayMyQR(false)}
+      />
 
       <ScrollView contentContainerStyle={styles.bodyContainer}>
         {displayMyQR ? (

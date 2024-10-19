@@ -1,8 +1,10 @@
+// Header.tsx
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import React from "react";
 
 export type HeaderProps = {
-  displayMyQr: (value: boolean) => void;
+  displayMyInfo: () => void;
+  displayMyRepo: () => void;
 };
 
 const Header = (props: HeaderProps) => {
@@ -12,13 +14,13 @@ const Header = (props: HeaderProps) => {
       <View style={styles.rowTopSecondContainer}>
         <Pressable
           style={styles.buttonruta}
-          onPress={() => props.displayMyQr(true)}
+          onPress={props.displayMyInfo} // Usar la función para mostrar la info
         >
           <Text style={[styles.buttonText, styles.shadoxboxing]}>Mi info</Text>
         </Pressable>
         <Pressable
           style={styles.buttonruta}
-          onPress={() => props.displayMyQr(false)}
+          onPress={props.displayMyRepo} // Usar la función para mostrar el repo
         >
           <Text style={styles.buttonText}>Mi Repo</Text>
         </Pressable>
