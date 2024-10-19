@@ -4,16 +4,10 @@ import QRCode from "react-native-qrcode-svg";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import AboutMe from "./components/AboutMe";
+import { cards } from "./data/AboutMeData";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
-  const favoriteThings = [
-    "Programar",
-    "Leer libros",
-    "Escuchar música",
-    "Jugar videojuegos",
-    "Viajar",
-  ];
 
   return (
     <View style={styles.container}>
@@ -28,7 +22,7 @@ export default function App() {
               description="Esta es una descripción de ejemplo."
               imgSource={require("./assets/SofyanAmrabat.jpg")}
             />
-            <AboutMe aboutme={favoriteThings} />
+            <AboutMe aboutme={cards} />
           </>
         ) : (
           <View style={styles.centerQRCode}>

@@ -1,8 +1,9 @@
+// AboutMe.tsx
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 export type AboutMeProps = {
-  aboutme: Array<string>;
+  aboutme: string[];
 };
 
 const AboutMe = ({ aboutme }: AboutMeProps) => {
