@@ -1,6 +1,7 @@
 // App.tsx
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
+
 import QRCode from "react-native-qrcode-svg";
 import Header from "./components/Header";
 import Card from "./components/Card";
@@ -9,21 +10,40 @@ import { cards } from "./data/AboutMeData";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleTheme = () => {
+    if (isDarkMode) {
+      setIsDarkMode(false);
+    } else {
+      setIsDarkMode(true);
+    }
+  };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        isDarkMode ? styles.darkContainer : styles.lightContainer,
+      ]}
+    >
       <Header
         displayMyInfo={() => setDisplayMyQR(true)}
         displayMyRepo={() => setDisplayMyQR(false)}
       />
 
       <ScrollView contentContainerStyle={styles.bodyContainer}>
+        <Pressable onPress={toggleTheme} style={styles.themeButton}>
+          <Text style={styles.buttonText}>
+            Cambiar a {isDarkMode ? "modo claro" : "modo oscuro"}
+          </Text>
+        </Pressable>
+
         {displayMyQR ? (
           <>
             <Card
               id={22}
-              title="Mi Título"
-              description="Esta es una descripción de ejemplo."
+              title="Sebastian Paez"
+              description="Temporal dataaaaaaaaaaaaaaaaaaaaaaaaa  "
               imgSource={require("./assets/SofyanAmrabat.jpg")}
             />
             <AboutMe aboutme={cards} />
@@ -41,16 +61,32 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
+  },
+  darkContainer: {
+    backgroundColor: "#333",
+  },
+  lightContainer: {
+    backgroundColor: "#fff",
   },
   bodyContainer: {
     width: "100%",
   },
   centerQRCode: {
-    justifyContent: "center",
+    margin: 50,
     alignItems: "center",
     width: "100%",
     height: "100%",
+  },
+  themeButton: {
+    padding: 15,
+    backgroundColor: "#007BFF",
+    marginVertical: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });

@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     height: "40%",
+    backgroundColor: "white",
   },
 
   avatar: {

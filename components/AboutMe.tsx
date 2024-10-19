@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textTransform: "capitalize",
     marginVertical: 10,
+    backgroundColor: "white",
+    color: "black",
   },
   scrollContainer: {
     width: "100%",
