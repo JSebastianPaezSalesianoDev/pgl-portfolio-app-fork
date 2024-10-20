@@ -6,6 +6,8 @@ export type HeaderProps = {
   displayMyInfo: () => void;
   displayMyRepo: () => void;
   title: string;
+  myInfo: string;
+  myRepo: string;
 };
 
 const Header = (props: HeaderProps) => {
@@ -14,10 +16,12 @@ const Header = (props: HeaderProps) => {
       <Text style={styles.firsttoprowContainer}>{props.title}</Text>
       <View style={styles.rowTopSecondContainer}>
         <Pressable style={styles.buttonruta} onPress={props.displayMyInfo}>
-          <Text style={[styles.buttonText, styles.shadoxboxing]}>Mi info</Text>
+          <Text style={[styles.buttonText, styles.shadoxboxing]}>
+            {props.myInfo}
+          </Text>
         </Pressable>
         <Pressable style={styles.buttonruta} onPress={props.displayMyRepo}>
-          <Text style={styles.buttonText}>Mi Repo</Text>
+          <Text style={styles.buttonText}>{props.myRepo}</Text>
         </Pressable>
       </View>
     </View>

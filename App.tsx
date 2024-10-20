@@ -31,6 +31,8 @@ export default function App() {
         displayMyInfo={() => setDisplayMyQR(true)}
         displayMyRepo={() => setDisplayMyQR(false)}
         title={info.title}
+        myInfo={info.myInfo}
+        myRepo={info.myRepo}
       />
 
       <ScrollView contentContainerStyle={styles.bodyContainer}>
