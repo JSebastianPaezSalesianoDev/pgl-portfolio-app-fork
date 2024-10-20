@@ -4,4 +4,7 @@ export const cards: string[] = [
   "Me gusta programar",
   "Me gusta jugar",
   "Me gusta leer",
+  "ejemplo",
+  "ejemplo",
+  "ejemplo",
 ];

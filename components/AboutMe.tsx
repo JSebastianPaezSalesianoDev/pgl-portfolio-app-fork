@@ -1,5 +1,4 @@
-// AboutMe.tsx
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 export type AboutMeProps = {
@@ -8,15 +7,15 @@ export type AboutMeProps = {
 
 const AboutMe = ({ aboutme }: AboutMeProps) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.sectionTitle}>Cosas que me gustan mucho:</Text>
-      <ScrollView style={styles.scrollContainer}>
-        {aboutme.map((item, index) => (
-          <Text key={index} style={styles.listItem}>
-            {item}
-          </Text>
-        ))}
-      </ScrollView>
+      <FlatList
+        data={aboutme}
+        renderItem={({ item }) => <Text style={styles.listItem}>{item}</Text>}
+        keyExtractor={(item, index) => index.toString()}
+        style={styles.scrollContainer}
+        showsVerticalScrollIndicator={true}
+      />
     </View>
   );
 };
@@ -24,6 +23,10 @@ const AboutMe = ({ aboutme }: AboutMeProps) => {
 export default AboutMe;
 
 const styles = StyleSheet.create({
+  container: {
+    width: 300,
+    height: 300,
+  },
   sectionTitle: {
     fontSize: 20,
     fontWeight: "900",

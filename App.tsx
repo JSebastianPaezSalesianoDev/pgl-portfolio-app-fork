@@ -51,6 +51,7 @@ export default function App() {
               description={infocard.myInfo}
               imgSource={require("./assets/SofyanAmrabat.jpg")}
             />
+
             <AboutMe aboutme={cards} />
           </>
         ) : (
