@@ -1,7 +1,8 @@
 // App.tsx
 import React, { useState } from "react";
 import { View, Text, Pressable, StyleSheet, ScrollView } from "react-native";
-
+import Entypo from "@expo/vector-icons/Entypo";
+import Feather from "@expo/vector-icons/Feather";
 import QRCode from "react-native-qrcode-svg";
 import Header from "./components/Header";
 import Card from "./components/Card";
@@ -37,9 +38,16 @@ export default function App() {
       />
 
       <ScrollView contentContainerStyle={styles.bodyContainer}>
-        <Pressable onPress={toggleTheme} style={styles.themeButton}>
+        <Pressable
+          onPress={toggleTheme}
+          style={isDarkMode ? styles.themeButtonDark : styles.themeButtonLight}
+        >
           <Text style={styles.buttonText}>
-            Cambiar a {isDarkMode ? "modo claro" : "modo oscuro"}
+            {isDarkMode ? (
+              <Entypo name="moon" size={24} color="black" />
+            ) : (
+              <Feather name="sun" size={24} color="black" />
+            )}
           </Text>
         </Pressable>
 
@@ -49,7 +57,7 @@ export default function App() {
               id={22}
               title={infocard.name}
               description={infocard.myInfo}
-              imgSource={require("./assets/SofyanAmrabat.jpg")}
+              imgSource={require("./assets/download.jpeg")}
             />
 
             <AboutMe aboutme={cards} />
@@ -84,11 +92,19 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  themeButton: {
-    padding: 15,
-    backgroundColor: "#007BFF",
+  themeButtonDark: {
+    padding: 10,
+    backgroundColor: "#E3C1E8",
     marginVertical: 10,
-    borderRadius: 5,
+    borderRadius: 115,
+    width: 50,
+  },
+  themeButtonLight: {
+    padding: 10,
+    backgroundColor: "#A3C8E6",
+    marginVertical: 10,
+    borderRadius: 115,
+    width: 50,
   },
   buttonText: {
     color: "white",

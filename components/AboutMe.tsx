@@ -24,7 +24,7 @@ export default AboutMe;
 
 const styles = StyleSheet.create({
   container: {
-    width: 300,
+    width: 365,
     height: 300,
   },
   sectionTitle: {
@@ -33,8 +33,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textTransform: "capitalize",
     marginVertical: 10,
-    backgroundColor: "white",
+    backgroundColor: "#ddc27d",
     color: "black",
+    borderRadius: 100,
   },
   scrollContainer: {
     width: "100%",
