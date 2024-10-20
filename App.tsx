@@ -8,6 +8,7 @@ import Card from "./components/Card";
 import AboutMe from "./components/AboutMe";
 import { cards } from "./data/AboutMeData";
 import { info } from "./data/HeaderData";
+import { infocard } from "./data/CardData";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -46,8 +47,8 @@ export default function App() {
           <>
             <Card
               id={22}
-              title="Sebastian Paez"
-              description="Temporal dataaaaaaaaaaaaaaaaaaaaaaaaa  "
+              title={infocard.name}
+              description={infocard.myInfo}
               imgSource={require("./assets/SofyanAmrabat.jpg")}
             />
             <AboutMe aboutme={cards} />
