@@ -10,32 +10,12 @@ export type CardProps = {
 
 const Card = ({ title, description, imgSource }: CardProps) => {
   return (
-    <View style={styles.bodystails}>
-      <Image style={styles.avatar} source={imgSource}></Image>
-      <View
-        style={{
-          margin: 10,
-          backgroundColor: "lightgray",
-          padding: 10,
-          borderRadius: 10,
-          width: "70%",
-        }}
-      ></View>
-      <Text style={{ textAlign: "center", fontWeight: "700", fontSize: 20 }}>
-        {title}
-      </Text>
-      <Text>{description}</Text>
-
-      <Text style={styles.body}>{}</Text>
-      <View
-        style={{
-          margin: 10,
-          backgroundColor: "lightgray",
-          padding: 10,
-          borderRadius: 10,
-          width: "70%",
-        }}
-      ></View>
+    <View style={styles.container}>
+      <Image style={styles.avatar} source={imgSource} />
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
     </View>
   );
 };
@@ -43,40 +23,32 @@ const Card = ({ title, description, imgSource }: CardProps) => {
 export default Card;
 
 const styles = StyleSheet.create({
-  bodystails: {
-    width: "100%",
+  container: {
+    width: "90%",
+    flexDirection: "row",
+    alignItems: "flex-start",
     borderWidth: 2,
-    borderColor: "black",
-    alignItems: "center",
-    justifyContent: "space-between",
-    height: "40%",
-    backgroundColor: "white",
+    backgroundColor: "lightgray",
+    padding: 10,
+    marginVertical: 10,
+    borderRadius: 10,
   },
-
   avatar: {
     height: 90,
     width: 90,
-    borderRadius: 100,
+    borderRadius: 45,
+    marginRight: 10,
   },
-  firstRow: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
-    marginBottom: 8,
+  textContainer: {
+    flex: 1,
   },
   title: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: "bold",
+    marginBottom: 5,
   },
-  image: {
-    height: 90,
-    width: 90,
-    borderRadius: 100,
-  },
-  body: {
-    color: "red",
+  description: {
     fontSize: 16,
-    textAlign: "justify",
+    color: "black",
   },
 });
