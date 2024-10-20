@@ -10,6 +10,7 @@ import AboutMe from "./components/AboutMe";
 import { cards } from "./data/AboutMeData";
 import { info } from "./data/HeaderData";
 import { infocard } from "./data/CardData";
+import PhraseOfDay from "./components/PhraseOfDay";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -67,6 +68,7 @@ export default function App() {
             <QRCode value="https://github.com/JSebastianPaezSalesianoDev" />
           </View>
         )}
+        <PhraseOfDay />
       </ScrollView>
     </View>
   );
