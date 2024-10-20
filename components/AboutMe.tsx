@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     textTransform: "capitalize",
     marginVertical: 10,
-    backgroundColor: "##E6E5AD",
+    backgroundColor: "#E6E5AD",
     color: "black",
     borderRadius: 100,
   },

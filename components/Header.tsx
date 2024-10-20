@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   firsttoprowContainer: {
-    backgroundColor: "gray",
+    backgroundColor: "#E286E5",
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 30,
   },
   rowTopSecondContainer: {
     flexDirection: "row",
-    backgroundColor: "darkgray",
+    backgroundColor: "#f4c5f3",
     justifyContent: "center",
     alignItems: "center",
   },

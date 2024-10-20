@@ -57,14 +57,14 @@ export default function App() {
               id={22}
               title={infocard.name}
               description={infocard.myInfo}
-              imgSource={require("./assets/download.jpeg")}
+              imgSource={require("./assets/f1.jpg")}
             />
 
             <AboutMe aboutme={cards} />
           </>
         ) : (
           <View style={styles.centerQRCode}>
-            <QRCode value="https://github.com/adhernea" />
+            <QRCode value="https://github.com/JSebastianPaezSalesianoDev" />
           </View>
         )}
       </ScrollView>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#333",
   },
   lightContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: "#e2e9f3",
   },
   bodyContainer: {
     width: "100%",
