@@ -5,23 +5,18 @@ import React from "react";
 export type HeaderProps = {
   displayMyInfo: () => void;
   displayMyRepo: () => void;
+  title: string;
 };
 
 const Header = (props: HeaderProps) => {
   return (
     <View style={styles.topContainer}>
-      <Text style={styles.firsttoprowContainer}>My Portfolio App</Text>
+      <Text style={styles.firsttoprowContainer}>{props.title}</Text>
       <View style={styles.rowTopSecondContainer}>
-        <Pressable
-          style={styles.buttonruta}
-          onPress={props.displayMyInfo} // Usar la función para mostrar la info
-        >
+        <Pressable style={styles.buttonruta} onPress={props.displayMyInfo}>
           <Text style={[styles.buttonText, styles.shadoxboxing]}>Mi info</Text>
         </Pressable>
-        <Pressable
-          style={styles.buttonruta}
-          onPress={props.displayMyRepo} // Usar la función para mostrar el repo
-        >
+        <Pressable style={styles.buttonruta} onPress={props.displayMyRepo}>
           <Text style={styles.buttonText}>Mi Repo</Text>
         </Pressable>
       </View>
