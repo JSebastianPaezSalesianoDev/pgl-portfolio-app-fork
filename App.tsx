@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import AboutMe from "./components/AboutMe";
 import { cards } from "./data/AboutMeData";
+import { info } from "./data/HeaderData";
 
 export default function App() {
   const [displayMyQR, setDisplayMyQR] = useState(true);
@@ -15,6 +16,7 @@ export default function App() {
       <Header
         displayMyInfo={() => setDisplayMyQR(true)}
         displayMyRepo={() => setDisplayMyQR(false)}
+        title={info.title}
       />
 
       <ScrollView contentContainerStyle={styles.bodyContainer}>
