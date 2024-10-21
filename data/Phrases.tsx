@@ -4,5 +4,5 @@ export const phrasesAdrianNeverSaid: string[] = [
   "ok",
   "La diferencia entre lo ordinario y lo extraordinario es ese pequeño extra",
   "El peor de los excesos es no cometer ninguno",
-  "En algun punto todo de la historia todo era imposible, hasta que se intento",
+  "En algun punto de la historia todo era imposible, hasta que se intento",
 ];
